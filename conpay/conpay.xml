@@ -37,15 +37,6 @@
 						label="SYSTEM_CONPAY_BUTTON_CONTAINER_ID"
 						size="40">
 				</field>
-				<!--
-				<field
-				  name="min_price"
-				  type="text"
-				  default="3000"
-				  label="SYSTEM_CONPAY_MIN_PRICE"
-				  size="40">
-				</field>
-				-->
 				<field
 						name="credit_purchase_field_id"
 						type="hidden"

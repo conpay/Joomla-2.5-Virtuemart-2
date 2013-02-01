@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="1.6.0" client="site" method="install" group="system">
+  <!-- TODO: Use SYSTEM_CONPAY as name -->
+  <name>Сервис CONPAY.RU</name>
+  <author>CONPAY.RU</author>
+  <version>1.0.0</version>
+  <description>SYSTEM_CONPAY_DESC</description>
+  <files>
+    <filename plugin="conpay">conpay.php</filename>
+    <filename>index.html</filename>
+    <filename>conpay-proxy.php</filename>
+    <filename>ConpayProxyModel.php</filename>
+  </files>
+  <languages>
+    <language tag="ru-RU">lang/ru-RU.plg_system_conpay.ini</language>
+    <language tag="en-GB">lang/en-GB.plg_system_conpay.ini</language>
+  </languages>
+  <config>
+    <fields name="params">
+      <fieldset name="basic">
+        <field
+          name="merchant_id"
+          type="text"
+          default=""
+          label="SYSTEM_CONPAY_MERCHANT_ID">
+        </field>
+        <field
+          name="api_key"
+          type="text"
+          default=""
+          label="SYSTEM_CONPAY_API_KEY"
+          size="40">
+        </field>
+        <field
+          name="button_container_id"
+          type="text"
+          default="conpay-link"
+          label="SYSTEM_CONPAY_BUTTON_CONTAINER_ID"
+          size="40">
+        </field>
+        <!--
+        <field
+          name="min_price"
+          type="text"
+          default="3000"
+          label="SYSTEM_CONPAY_MIN_PRICE"
+          size="40">
+        </field>
+		-->
+        <field
+          name="credit_purchase_field_id"
+          type="hidden"
+          default="">
+        </field>
+      </fieldset>
+      <fieldset name="advanced">
+        <field
+          name="button_class_name"
+          type="text"
+          default="button"
+          label="SYSTEM_CONPAY_BUTTON_CLASS_NAME"
+          size="40">
+        </field>
+        <field
+          name="button_tag_name"
+          type="text"
+          default="a"
+          label="SYSTEM_CONPAY_BUTTON_TAG_NAME"
+          size="40">
+        </field>
+        <field
+          name="button_text"
+          type="textarea"
+          default="&lt;span&gt;Купить в кредит&lt;/span&gt;"
+          label="SYSTEM_CONPAY_BUTTON_TEXT"
+          cols="60" rows="10"
+          filter="safehtml">
+        </field>
+      </fieldset>
+    </fields>
+  </config>
+  <scriptfile>conpay.script.php</scriptfile>
+</extension>

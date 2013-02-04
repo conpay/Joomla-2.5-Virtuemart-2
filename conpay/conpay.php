@@ -107,7 +107,7 @@ class plgSystemConpay extends JPlugin {
 		$cont_id = $params->get('button_container_id');
 
 		$doc =& JFactory::getDocument();
-		$doc->addScript("http://www.conpay.ru/public/api/btn.1.6.js");
+		$doc->addScript("http://www.conpay.ru/public/api/btn.1.6.min.js");
 
 		$script = "
 		if (!jQuery) window.onload = mod_conpay;

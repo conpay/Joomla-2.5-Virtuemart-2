@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="plugin" version="1.6.0" client="site" method="install" group="system">
 	<name>SYSTEM_CONPAY</name>
-	<author>CONPAY.RU</author>
+	<author>Alexey Frolagin</author>
+	<authorEmail>frolagin@conpay.ru</authorEmail>
 	<version>1.0.0</version>
 	<description>SYSTEM_CONPAY_DESC</description>
 	<files>
@@ -47,7 +48,7 @@
 				<field
 						name="button_class_name"
 						type="text"
-						default="button"
+						default="conpay-btn"
 						label="SYSTEM_CONPAY_BUTTON_CLASS_NAME"
 						size="40">
 				</field>
@@ -61,7 +62,7 @@
 				<field
 						name="button_text"
 						type="textarea"
-						default="&lt;span&gt;Купить в кредит&lt;/span&gt;"
+						default="&lt;span class=&quot;conpay-btn-credit&quot;&gt;&lt;b&gt;&lt;/b&gt;Купить в кредит&lt;/span&gt; от &lt;b&gt;{monthly}&lt;/b&gt; р. в месяц"
 						label="SYSTEM_CONPAY_BUTTON_TEXT"
 						cols="60" rows="10"
 						filter="safehtml">

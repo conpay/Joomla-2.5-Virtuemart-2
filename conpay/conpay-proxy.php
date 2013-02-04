@@ -30,8 +30,8 @@ try
 	$proxy = new ConpayProxyModel;
 	// Устанавливаем свой идентификатор продавца
 	$proxy->setMerchantId($params->get('merchant_id'));
-	// Устанавливаем кодировку, используемую на сайте (по-умолчанию 'UTF-8')
-	$proxy->setCharset('UTF-8');
+	// Устанавливаем свой API-ключ
+	$proxy->setApiKey($params->get('api_key'));
 	// Выполняем запрос, выводя его результат
 	echo $proxy->sendRequest();
 }

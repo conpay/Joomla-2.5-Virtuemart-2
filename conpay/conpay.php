@@ -104,20 +104,27 @@ class plgSystemConpay extends JPlugin {
 			}
 		}
 
-		$doc =& JFactory::getDocument();
-		$doc->addScript("http://www.conpay.ru/public/api/btn.1.6.min.js");
+		$cont_id = $params->get('button_container_id');
 
-		$script .= "
+		$doc =& JFactory::getDocument();
+		$doc->addScript("http://www.conpay.ru/public/api/btn.1.6.js");
+
+		$script = "
 		if (!jQuery) window.onload = mod_conpay;
 		else jQuery(document).ready(mod_conpay);
 
 		function mod_conpay() {
 			try {
-				window.conpay.init('/plugins/system/conpay/conpay-proxy.php', {"."'className': '".$params->get('button_class_name')."', "."'tagName': '".$params->get('button_tag_name')."', "."'text': '".$params->get('button_text')."'}".(($user_details) ? ', '.json_encode($user_details) : '').");
+				window.conpay.init('/plugins/system/conpay/conpay-proxy.php', {
+					'className': '".$params->get('button_class_name')."',
+					'tagName': '".$params->get('button_tag_name')."',
+					'text': '".$params->get('button_text')."'
+				}".($user_details ? ', '.json_encode($user_details) : '').");
 				window.conpay.addButton(";
 
 		$script .= json_encode($details);
-		$script .= ", '".(($cont_id = $params->get('button_container_id')) ? $cont_id : 'conpay-link')."');
+		$script .= $cont_id ? ", '".$cont_id."'" : '';
+		$script .= ");
 			} catch(e){};
 		}";
 

@@ -59,7 +59,13 @@ class plgSystemConpay extends JPlugin {
 				}
 			}
 
-			$item_details = array('name' => $product->product_name, 'category' => $product->category_name, 'url' => ($host = 'http://'.$_SERVER['HTTP_HOST']).$product->link, 'quantity' => ($q = $product->quantity),);
+			$item_details = array(
+				'name' => $product->product_name,
+				'category' => $product->category_name,
+				'id' => $product->virtuemart_product_id,
+				'url' => ($host = 'http://'.$_SERVER['HTTP_HOST']).$product->link,
+				'quantity' => ($q = $product->quantity),
+			);
 
 			// TODO: find faster way to get product media
 			if ('cart' != $view)

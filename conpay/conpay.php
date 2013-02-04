@@ -120,11 +120,7 @@ class plgSystemConpay extends JPlugin {
 					'tagName': '".$params->get('button_tag_name')."',
 					'text': '".$params->get('button_text')."'
 				}".($user_details ? ', '.json_encode($user_details) : '').");
-				window.conpay.addButton(";
-
-		$script .= json_encode($details);
-		$script .= $cont_id ? ", '".$cont_id."'" : '';
-		$script .= ");
+				window.conpay.addButton(".json_encode($details).($cont_id ? ", '".$cont_id."'" : '').");
 			} catch(e){};
 		}";
 
